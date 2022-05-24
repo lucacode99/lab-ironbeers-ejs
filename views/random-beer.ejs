@@ -1,1 +1,8 @@
 <h1>random beer page</h1>
+
+<% for( let index = 0; index < randomBeerFromApi.length; index +=1 ) { %>
+    <h3><%-randomBeerFromApi[index].name%></h3>
+    <img src="<%=randomBeerFromApi[index].image_url%>" alt="a picture of a bautiful drink" height="200px">
+    <p><%-randomBeerFromApi[index].tagline%></p>
+    <article><%-randomBeerFromApi[index].description%></article>
+<% } %>

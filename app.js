@@ -18,25 +18,30 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {  res.render('index')});
 
-
-
-// WORKING UNDER HERE
 app.get('/beers', (req, res) => {  
     punkAPI.getBeers() //promise
     .then((beersFromApi) =>{
-        console.log(beersFromApi) 
+        //console.log(beersFromApi) 
         //res.render('beers', {beersFromApi});
         res.render('beers', {beersFromApi});
     })
     
 })
 
-
-
-
-
-// WORKING ABOVE FROM THIS
-
-app.get('/random-beer', (req, res) => {  res.render('random-beer')});
+app.get('/random-beer', (req, res) => {  
+    punkAPI.getRandom()
+    .then((randomBeerFromApi) => {
+        console.log(randomBeerFromApi)
+    
+  
+    res.render('random-beer', {randomBeerFromApi})
+})
+})
 
 app.listen(3000, () => console.log('🏃‍ on port 3000'));
+
+/*
+call the PunkAPI getRandom() method. It returns a promise that will resolve 
+with a different beer object on every call. Look at the documentation to understand the structure of the 
+data that you're supposed to get back. 👍
+*/

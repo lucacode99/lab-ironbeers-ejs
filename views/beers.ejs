@@ -1,5 +1,9 @@
 <h1>beers page</h1>
 
 <% for( let index = 0; index < beersFromApi.length; index +=1 ) { %>
-    <h2><%-beersFromApi[index].name%></h2>
+    <h3><%-beersFromApi[index].name%></h3>
+    <img src="<%=beersFromApi[index].image_url %>" alt="a picture of a bautiful drink" height="200px">
+    <p><%-beersFromApi[index].tagline%></p>
+    <article><%-beersFromApi[index].description%></article>
 <% } %>
+
