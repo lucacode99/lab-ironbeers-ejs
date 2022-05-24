@@ -1,3 +1,12 @@
+.navigation {
+    background-color: #2081c3;
+    height: 3rem;
+}
+
+.footer {
+    background-color: #0a2c42;
+    height: 3rem;
+}
 /*
 white: #f7f9f9;
 light-blue: #2081c3;
